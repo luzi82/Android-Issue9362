@@ -1,0 +1,8 @@
+bin
+gen
+out
+install.sh
+uninstall.sh
+res/values*/strings.xml
+.~lock.i18n.ods#
+.i18n_timpstamp
