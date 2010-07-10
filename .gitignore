@@ -3,6 +3,6 @@ gen
 out
 install.sh
 uninstall.sh
-res/values*/strings.xml
+res/values*/i9362_loc_strings.xml
 .~lock.i18n.ods#
-.i18n_timpstamp
+.i18n_timestamp
