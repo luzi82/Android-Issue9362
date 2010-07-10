@@ -1,4 +1,4 @@
-package luzi82.issue9362;
+package com.luzi82.issue9362;
 
 import android.app.Activity;
 import android.os.Bundle;
