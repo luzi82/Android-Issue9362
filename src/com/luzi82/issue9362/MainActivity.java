@@ -27,7 +27,7 @@ public class MainActivity extends TabActivity implements
 
 		final TabHost tabHost = getTabHost();
 
-		tabHost.addTab(infoSpec = tabHost.newTabSpec(TAB_INFO).setIndicator(
+		tabHost.addTab(tabHost.newTabSpec(TAB_INFO).setIndicator(
 				res.getString(R.string.main_tab_info)).setContent(this));
 
 		tabHost.addTab(tabHost.newTabSpec(TAB_APPWIDGETID).setIndicator(
