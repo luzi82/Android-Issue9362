@@ -38,7 +38,8 @@ public class MainActivity extends TabActivity implements
 				res.getString(R.string.main_tab_log)).setContent(this));
 
 		tabHost.addTab(tabHost.newTabSpec(TAB_PROVIDER).setIndicator(
-				res.getString(R.string.main_tab_provider)).setContent(this));
+				res.getString(R.string.main_tab_provider)).setContent(
+				new Intent(this, ProviderListActivity.class)));
 	}
 
 	@Override
