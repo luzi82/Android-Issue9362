@@ -8,11 +8,13 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 
-public class About extends PreferenceActivity {
+public class AboutView extends PreferenceActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		addPreferencesFromResource(R.xml.about);
 
 		// app ver
 		Preference appVerPreference = findPreference("about_version");

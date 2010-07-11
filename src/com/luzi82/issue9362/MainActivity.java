@@ -1,13 +1,74 @@
 package com.luzi82.issue9362;
 
-import android.app.Activity;
+import android.app.TabActivity;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.TabHost;
 
-public class MainActivity extends Activity {
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-    }
+public class MainActivity extends TabActivity implements
+		TabHost.TabContentFactory {
+
+	private final String TAB_INFO = "info";
+	private final String TAB_APPWIDGETID = "appwidgetid";
+	private final String TAB_LOG = "log";
+	private final String TAB_PROVIDER = "provider";
+
+	private TabHost.TabSpec infoSpec;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		// setContentView(R.layout.main);
+
+		Resources res = getResources();
+
+		final TabHost tabHost = getTabHost();
+
+		tabHost.addTab(infoSpec = tabHost.newTabSpec(TAB_INFO).setIndicator(
+				res.getString(R.string.main_tab_info)).setContent(this));
+
+		tabHost.addTab(tabHost.newTabSpec(TAB_APPWIDGETID).setIndicator(
+				res.getString(R.string.main_tab_appwidgetid)).setContent(
+				new Intent(this, AppWidgetIdListActivity.class)));
+
+		tabHost.addTab(tabHost.newTabSpec(TAB_LOG).setIndicator(
+				res.getString(R.string.main_tab_log)).setContent(this));
+
+		tabHost.addTab(tabHost.newTabSpec(TAB_PROVIDER).setIndicator(
+				res.getString(R.string.main_tab_provider)).setContent(this));
+	}
+
+	@Override
+	public View createTabContent(String tag) {
+		// default
+		// return getLayoutInflater().inflate(R.layout.info,
+		// getTabHost().getTabContentView());
+		return getLayoutInflater().inflate(R.layout.info, null);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main_default, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.menu_item_about: {
+			Intent intent = new Intent(this, AboutView.class);
+			startActivity(intent);
+			return true;
+		}
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
 }

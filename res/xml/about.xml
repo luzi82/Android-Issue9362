@@ -9,6 +9,8 @@
 			<intent android:action="android.intent.action.VIEW"
 				android:data="@string/about_appname_url" />
 		</Preference>
+		<Preference android:key="about_version"
+			android:title="@string/about_version_title" />
 		<Preference android:key="about_developer"
 			android:title="@string/about_developer_title"
 			android:summary="@string/about_developer_name">
@@ -37,11 +39,6 @@
 				android:targetPackage="com.luzi82.randomwallpaper"
 				android:targetClass="com.luzi82.randomwallpaper.QRCode" />
 		</Preference>
-	</PreferenceCategory>
-
-	<PreferenceCategory android:title="@string/about_session_version_title">
-		<Preference android:key="about_version"
-			android:title="@string/about_version_title" />
 	</PreferenceCategory>
 
 	<PreferenceCategory android:title="@string/about_session_other_title">
