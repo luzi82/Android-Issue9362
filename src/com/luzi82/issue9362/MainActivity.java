@@ -25,6 +25,8 @@ public class MainActivity extends TabActivity implements
 
 		Resources res = getResources();
 
+		setTitle(R.string.app_name);
+
 		final TabHost tabHost = getTabHost();
 
 		tabHost.addTab(tabHost.newTabSpec(TAB_INFO).setIndicator(
