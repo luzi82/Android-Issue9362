@@ -18,8 +18,6 @@ public class MainActivity extends TabActivity implements
 	private final String TAB_LOG = "log";
 	private final String TAB_PROVIDER = "provider";
 
-	private TabHost.TabSpec infoSpec;
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
