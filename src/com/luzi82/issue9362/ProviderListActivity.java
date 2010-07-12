@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.ListActivity;
+import android.appwidget.AppWidgetManager;
+import android.appwidget.AppWidgetProviderInfo;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
@@ -13,10 +15,16 @@ public class ProviderListActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		int[] data = { 0, 1, 2, 3, 4 };
+		AppWidgetManager awm = AppWidgetManager.getInstance(this);
+		List<AppWidgetProviderInfo> awpiList = awm.getInstalledProviders();
 		List<String> idList = new ArrayList<String>();
-		for (int i : data) {
-			idList.add(Integer.toString(i));
+		for (AppWidgetProviderInfo awpi : awpiList) {
+			StringBuffer sb = new StringBuffer(awpi.provider.flattenToString());
+			if (awpi.configure != null) {
+				sb.append(" : ");
+				sb.append(awpi.configure.flattenToShortString());
+			}
+			idList.add(sb.toString());
 		}
 
 		ArrayAdapter<String> aa = new ArrayAdapter<String>(this,

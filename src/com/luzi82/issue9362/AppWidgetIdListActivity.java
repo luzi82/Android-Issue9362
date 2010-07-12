@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.ListActivity;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,8 +21,10 @@ public class AppWidgetIdListActivity extends ListActivity {
 //	@Override
 //	protected void onCreate() {
 //		super.onCreate();
+		
+		AppWidgetManager awm=AppWidgetManager.getInstance(this);
 
-		int[] data = { 0, 1, 2, 3, 4 };
+		int[] data = awm.getAppWidgetIds(new ComponentName(this, DemoAppWidgetProvider.class));
 		List<String> idList = new ArrayList<String>();
 		for (int i : data) {
 			idList.add(Integer.toString(i));
