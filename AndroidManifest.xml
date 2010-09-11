@@ -10,19 +10,21 @@
 		</activity>
 		<activity android:name=".AboutActivity" />
 		<activity android:name=".AppWidgetIdListActivity" />
-		<activity android:name=".ProviderListActivity" />
+		<activity android:name=".InfoActivity" />
 		<activity android:name=".LogListActivity" />
+		<activity android:name=".ProviderListActivity" />
 		<activity android:name=".AddWidgetActivity">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
-            </intent-filter>
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+			</intent-filter>
 		</activity>
-        <receiver android:name=".DemoAppWidgetProvider">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_config_info" />
-        </receiver>
+		<receiver android:name=".DemoAppWidgetProvider">
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+			</intent-filter>
+			<meta-data android:name="android.appwidget.provider"
+				android:resource="@xml/appwidget_config_info" />
+		</receiver>
 	</application>
 	<uses-sdk android:minSdkVersion="3" />
 

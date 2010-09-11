@@ -30,7 +30,8 @@ public class MainActivity extends TabActivity implements
 		final TabHost tabHost = getTabHost();
 
 		tabHost.addTab(tabHost.newTabSpec(TAB_INFO).setIndicator(
-				res.getString(R.string.main_tab_info)).setContent(this));
+				res.getString(R.string.main_tab_info)).setContent(
+				new Intent(this, InfoActivity.class)));
 
 		tabHost.addTab(tabHost.newTabSpec(TAB_APPWIDGETID).setIndicator(
 				res.getString(R.string.main_tab_appwidgetid)).setContent(
@@ -50,13 +51,14 @@ public class MainActivity extends TabActivity implements
 		super.onResume();
 	}
 
-	@Override
-	public View createTabContent(String tag) {
-		// default
-		// return getLayoutInflater().inflate(R.layout.info,
-		// getTabHost().getTabContentView());
-		return getLayoutInflater().inflate(R.layout.info, null);
-	}
+	 @Override
+	 public View createTabContent(String tag) {
+	 // default
+	 // return getLayoutInflater().inflate(R.layout.info,
+	 // getTabHost().getTabContentView());
+//	 return getLayoutInflater().inflate(R.layout.info, null);
+		 return null;
+	 }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
