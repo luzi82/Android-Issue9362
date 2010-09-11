@@ -5,7 +5,9 @@
 	<TextView android:text="@string/info_text"
 		android:layout_width="fill_parent" android:layout_height="wrap_content" />
 	<Button android:text="@string/info_link_mainsite_text"
-		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:id="@+id/info_link_mainsite_button" />
 	<Button android:text="@string/info_link_issue_text"
-		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:id="@+id/info_link_issue_button" />
 </LinearLayout>

@@ -6,14 +6,13 @@ import java.util.List;
 import android.app.ListActivity;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProviderInfo;
-import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
 public class ProviderListActivity extends ListActivity {
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	protected void onResume() {
+		super.onResume();
 
 		AppWidgetManager awm = AppWidgetManager.getInstance(this);
 		List<AppWidgetProviderInfo> awpiList = awm.getInstalledProviders();
@@ -31,6 +30,8 @@ public class ProviderListActivity extends ListActivity {
 				R.layout.providerlist_entry, R.id.providerlist_entry_text,
 				idList);
 		setListAdapter(aa);
+
+		onContentChanged();
 	}
 
 }

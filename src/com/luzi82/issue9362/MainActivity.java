@@ -37,11 +37,17 @@ public class MainActivity extends TabActivity implements
 				new Intent(this, AppWidgetIdListActivity.class)));
 
 		tabHost.addTab(tabHost.newTabSpec(TAB_LOG).setIndicator(
-				res.getString(R.string.main_tab_log)).setContent(this));
+				res.getString(R.string.main_tab_log)).setContent(
+				new Intent(this, LogListActivity.class)));
 
 		tabHost.addTab(tabHost.newTabSpec(TAB_PROVIDER).setIndicator(
 				res.getString(R.string.main_tab_provider)).setContent(
 				new Intent(this, ProviderListActivity.class)));
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
 	}
 
 	@Override
@@ -63,7 +69,7 @@ public class MainActivity extends TabActivity implements
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.menu_item_about: {
-			Intent intent = new Intent(this, AboutView.class);
+			Intent intent = new Intent(this, AboutActivity.class);
 			startActivity(intent);
 			return true;
 		}
