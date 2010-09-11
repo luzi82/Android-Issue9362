@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.ListActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,8 +13,14 @@ import android.widget.ArrayAdapter;
 public class LogListActivity extends ListActivity {
 
 	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		setContentView(R.layout.appwidgetidlist);
+	}
+
+	@Override
 	protected void onResume() {
-		// TODO Auto-generated method stub
 		super.onResume();
 
 		updateList();

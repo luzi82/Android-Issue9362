@@ -7,12 +7,20 @@ import android.app.ListActivity;
 import android.appwidget.AppWidgetHost;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 
 public class AppWidgetIdListActivity extends ListActivity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		setContentView(R.layout.appwidgetidlist);
+	}
 
 	@Override
 	protected void onResume() {
