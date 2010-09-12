@@ -32,6 +32,16 @@ public class InfoActivity extends Activity {
 										R.string.info_link_issue_url))));
 					}
 				});
+
+		findViewById(R.id.info_link_video_button).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						startActivity(new Intent(Intent.ACTION_VIEW, Uri
+								.parse(getResources().getString(
+										R.string.info_link_video_url))));
+					}
+				});
 	}
 
 }
